@@ -32,6 +32,9 @@ dependencies {
   implementation("io.vertx:vertx-http-service-factory")
   implementation("io.vertx:vertx-web-sstore-redis")
   implementation("io.vertx:vertx-redis-client")
+  implementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
+  implementation("org.projectlombok:lombok:1.18.22")
+  annotationProcessor("org.projectlombok:lombok:1.18.22")
   testImplementation("io.vertx:vertx-junit5")
   testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
 }

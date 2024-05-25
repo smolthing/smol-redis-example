@@ -1,0 +1,63 @@
+= Smol-redis
+
+image:https://img.shields.io/badge/vert.x-4.5.8-purple.svg[link="https://vertx.io"]
+
+This application was generated using http://start.vertx.io
+
+== Getting Started
+1. Start Redis
+```
+docker run --name my-redis-container -d -p 6379:6379 redis
+docker exec -it my-redis-container redis-cli
+
+127.0.0.1:6379> keys *
+(empty array)
+127.0.0.1:6379> keys *
+1) "1"
+127.0.0.1:6379> get 1
+"true"
+```
+
+2. Run the application
+```
+./gradlew clean run
+```
+
+== API
+The server is running on http://localhost:8000.
+
+Request:
+```
+GET http://localhost:8000/data?key=1
+```
+Response:
+```
+{
+  "data": {
+    "key": "1",
+    "value": true
+  },
+  "isCached": false
+}
+```
+
+== Development
+To launch your tests:
+```
+./gradlew clean test
+```
+
+To package your application:
+```
+./gradlew clean assemble
+```
+
+== Help
+
+* https://vertx.io/docs/[Vert.x Documentation]
+* https://stackoverflow.com/questions/tagged/vert.x?sort=newest&pageSize=15[Vert.x Stack Overflow]
+* https://groups.google.com/forum/?fromgroups#!forum/vertx[Vert.x User Group]
+* https://discord.gg/6ry7aqPWXy[Vert.x Discord]
+* https://gitter.im/eclipse-vertx/vertx-users[Vert.x Gitter]
+
+
